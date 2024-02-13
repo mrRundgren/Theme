@@ -4,11 +4,12 @@
 @inject ThemeProvider ThemeProvider
 
 <PageTitle>Counter</PageTitle>
+<section class="prose text-center mx-auto p-8">
+    <h1>Counter</h1>
+    <p role="status">Current count: @_currentCount</p>
+</section>
 
-<h1>Counter</h1>
-
-<p role="status">Current count: @_currentCount</p>
-<div class="grid lg:grid-cols-4 gap-2 lg:gap-4 max-w-screen-md mx-auto">
+<div class="mt-8 grid lg:grid-cols-4 gap-2 lg:gap-4 max-w-screen-md mx-auto">
     <div class="grid grid-cols-2 gap-2 lg:order-4">
         <Button ButtonType="ButtonType.Primary" @onclick="IncrementCount">
             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

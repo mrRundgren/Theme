@@ -3,8 +3,10 @@ module.exports = {
     content: ["../**/*.{razor,html,cshtml}"],
     darkMode: "class",
     theme: {
-        extend: {},
+        extend: {}
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography')
+    ]
 }
 
