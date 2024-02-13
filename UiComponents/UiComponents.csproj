@@ -20,4 +20,8 @@
         <UpToDateCheckInput Remove="Core\Ripple.razor"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <None Remove="UiComponents.csproj.DotSettings"/>
+    </ItemGroup>
+
 </Project>

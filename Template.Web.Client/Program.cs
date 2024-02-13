@@ -3,6 +3,6 @@ using UiComponents.Theming;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-builder.Services.AddSingleton<ThemeProvider>();
+builder.Services.AddScoped<ThemeProvider>();
 
 await builder.Build().RunAsync();
