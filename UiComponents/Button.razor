@@ -1,0 +1,18 @@
+﻿@inherits UiComponentBase
+<button @attributes="Attributes" class="@(CssClass) @(ClassAttribute)">@ChildContent</button>
+
+@code {
+
+    [Parameter] public ButtonType ButtonType { get; set; } = ButtonType.Primary;
+
+    private string? CssClass => ButtonType switch
+    {
+        ButtonType.Secondary => ThemeProvider.SecondaryButton,
+        ButtonType.Danger => ThemeProvider.DangerButton,
+        ButtonType.Invisible => ThemeProvider.InvisibleButton,
+        ButtonType.Icon => ThemeProvider.IconButton,
+        ButtonType.Primary => ThemeProvider.PrimaryButton,
+        _ => ThemeProvider.PrimaryButton
+    };
+
+}

@@ -1,0 +1,18 @@
+﻿@inherits UiComponentBase
+
+@if (Colors is not null)
+{
+    @Colors
+}
+
+@if (Buttons is not null)
+{
+    @Buttons
+}
+
+@code {
+
+    [Parameter] public RenderFragment? Colors { get; set; }
+
+    [Parameter] public RenderFragment? Buttons { get; set; }
+}

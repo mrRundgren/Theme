@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+<Theme>
+    <Buttons>
+        <PrimaryButton class="bg-neutral-900 text-neutral-100 hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
+        <SecondaryButton class="bg-transparent text-neutral-900 border-2 border-neutral-900 hover:bg-black/10 dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
+        <DangerButton class="bg-red-500 text-neutral-100 hover:bg-red-600 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
+        <InvisibleButton class="bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
+        <IconButton class="bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded-full h-12 w-12 flex items-center justify-center gap-6 transition-all select-none"/>
+    </Buttons>
+</Theme>
