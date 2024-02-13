@@ -24,10 +24,13 @@
 
 <Theme>
     <Buttons>
-        <PrimaryButton class="bg-neutral-900 text-neutral-100 hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
-        <SecondaryButton class="bg-transparent text-neutral-900 border-2 border-neutral-900 hover:bg-black/10 dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
-        <DangerButton class="bg-red-500 text-neutral-100 hover:bg-red-600 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
-        <InvisibleButton class="bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none"/>
-        <IconButton class="bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded-full h-12 w-12 flex items-center justify-center gap-6 transition-all select-none"/>
+        <PrimaryButton class="ripple-dark *:pointer-events-none bg-neutral-900 text-neutral-100 hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none disabled:opacity-50 disabled:pointer-events-none"/>
+        <SecondaryButton class="ripple-light *:pointer-events-none bg-transparent text-neutral-900 border-2 border-neutral-900 hover:bg-black/10 dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none disabled:opacity-50 disabled:pointer-events-none"/>
+        <DangerButton class="ripple-dark *:pointer-events-none bg-red-500 text-neutral-100 hover:bg-red-600 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none disabled:opacity-50 disabled:pointer-events-none"/>
+        <InvisibleButton class="ripple-light *:pointer-events-none bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-all select-none disabled:opacity-50 disabled:pointer-events-none"/>
+        <IconButton class="ripple-light *:pointer-events-none bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded-full h-12 w-12 flex items-center justify-center gap-6 transition-all select-none disabled:opacity-50 disabled:pointer-events-none"/>
     </Buttons>
+    <Effects>
+        <RippleEffect class="ripple block absolute w-full aspect-square rounded-full z-10 transform-gpu origin-center"/>
+    </Effects>
 </Theme>

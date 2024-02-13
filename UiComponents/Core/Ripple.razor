@@ -1,0 +1,12 @@
+﻿@inherits UiComponentBase
+@if (Args is not null)
+{
+    <ripple style="@($"top: {Args.OffsetY}px; left: {Args.OffsetX}px;")" class="@(CssClass) @(ClassAttribute)"/>
+}
+
+@code {
+    [Parameter] public MouseEventArgs? Args { get; set; }
+    [Parameter] public EventCallback<MouseEventArgs?> ArgsChanged { get; set; }
+
+    private string? CssClass => ThemeProvider.RippleEffect;
+}

@@ -1,5 +1,5 @@
 using Template.Web.Components;
-using UiComponents;
+using UiComponents.Theming;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,3 +1,23 @@
 ﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ripple {
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.5s linear;
+}
+
+.ripple-light {
+    @apply [&>.ripple]:bg-black/15 dark:[&>.ripple]:bg-white/30 relative overflow-hidden;
+}
+
+.ripple-dark {
+    @apply [&>.ripple]:bg-white/30 dark:[&>.ripple]:bg-black/15 relative overflow-hidden;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}

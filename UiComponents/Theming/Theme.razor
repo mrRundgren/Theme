@@ -10,9 +10,16 @@
     @Buttons
 }
 
+@if (Effects is not null)
+{
+    @Effects
+}
+
 @code {
 
     [Parameter] public RenderFragment? Colors { get; set; }
 
     [Parameter] public RenderFragment? Buttons { get; set; }
+
+    [Parameter] public RenderFragment? Effects { get; set; }
 }

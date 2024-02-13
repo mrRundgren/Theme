@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using UiComponents;
+using UiComponents.Theming;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 

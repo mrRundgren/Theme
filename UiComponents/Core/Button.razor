@@ -1,0 +1,32 @@
+﻿@inherits UiComponentBase
+<button
+    @attributes="Attributes"
+    @onmouseup="@(e => Args = e)"
+    @onmousedown="@(() => Args = null)"
+    @onblur="@(() => Args = null)"
+    class="@(CssClass) @(ClassAttribute)">
+    @ChildContent
+    @if (RippleEffect)
+    {
+        <Ripple @bind-Args="Args"/>
+    }
+</button>
+
+@code {
+
+    [Parameter] public ButtonType ButtonType { get; set; } = ButtonType.Primary;
+    [Parameter] public bool RippleEffect { get; set; } = true;
+
+    private MouseEventArgs? Args { get; set; }
+
+    private string? CssClass => ButtonType switch
+    {
+        ButtonType.Secondary => ThemeProvider.SecondaryButton,
+        ButtonType.Danger => ThemeProvider.DangerButton,
+        ButtonType.Invisible => ThemeProvider.InvisibleButton,
+        ButtonType.Icon => ThemeProvider.IconButton,
+        ButtonType.Primary => ThemeProvider.PrimaryButton,
+        _ => ThemeProvider.PrimaryButton
+    };
+
+}
