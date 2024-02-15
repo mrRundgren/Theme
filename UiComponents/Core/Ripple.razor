@@ -8,5 +8,5 @@
     [Parameter] public MouseEventArgs? Args { get; set; }
     [Parameter] public EventCallback<MouseEventArgs?> ArgsChanged { get; set; }
 
-    private string? CssClass => ThemeProvider.RippleEffect;
+    private string? CssClass => Theme.RippleEffect;
 }

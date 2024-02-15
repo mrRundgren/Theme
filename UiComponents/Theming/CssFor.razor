@@ -1,5 +1,4 @@
 @namespace UiComponents.Theming
-@using System.Reflection
 @inherits UiComponentBase
 
 @code {
@@ -7,6 +6,7 @@
 
     protected override void OnInitialized()
     {
-        typeof(ThemeProvider).GetProperty(Name)?.SetValue(ThemeProvider, ClassAttribute);
+        typeof(ThemeProvider).GetProperty(Name)?.SetValue(Theme, ClassAttribute);
     }
+
 }

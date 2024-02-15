@@ -37,12 +37,20 @@
         animation: ripple 0.5s linear;
     }
 
-    .ripple-light {
+    .ripple-dark {
         @apply [&>.ripple]:bg-black/15 dark:[&>.ripple]:bg-white/30 relative overflow-hidden;
     }
 
-    .ripple-dark {
+    .ripple-dark-forced {
+        @apply [&>.ripple]:bg-black/15 relative overflow-hidden;
+    }
+
+    .ripple-light {
         @apply [&>.ripple]:bg-white/30 dark:[&>.ripple]:bg-black/15 relative overflow-hidden;
+    }
+
+    .ripple-light-forced {
+        @apply [&>.ripple]:bg-white/30 relative overflow-hidden;
     }
 
     @keyframes ripple {

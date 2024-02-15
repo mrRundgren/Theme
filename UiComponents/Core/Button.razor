@@ -4,7 +4,7 @@
     @onmouseup="@(e => Args = e)"
     @onmousedown="@(() => Args = null)"
     @onblur="@(() => Args = null)"
-    class="@(CssClass) @(ClassAttribute)">
+    class="@(Theme.BaseButton) @(CssClass) @(ClassAttribute)">
     @ChildContent
     @if (RippleEffect)
     {
@@ -14,19 +14,19 @@
 
 @code {
 
-    [Parameter] public ButtonType ButtonType { get; set; } = ButtonType.Primary;
+    [Parameter] public ButtonType ButtonType { get; set; } = ButtonType.Base;
     [Parameter] public bool RippleEffect { get; set; } = true;
 
     private MouseEventArgs? Args { get; set; }
 
     private string? CssClass => ButtonType switch
     {
-        ButtonType.Secondary => ThemeProvider.SecondaryButton,
-        ButtonType.Danger => ThemeProvider.DangerButton,
-        ButtonType.Invisible => ThemeProvider.InvisibleButton,
-        ButtonType.Icon => ThemeProvider.IconButton,
-        ButtonType.Primary => ThemeProvider.PrimaryButton,
-        _ => ThemeProvider.PrimaryButton
+        ButtonType.Primary => Theme.PrimaryButton,
+        ButtonType.Secondary => Theme.SecondaryButton,
+        ButtonType.Danger => Theme.DangerButton,
+        ButtonType.Invisible => Theme.InvisibleButton,
+        ButtonType.Icon => Theme.IconButton,
+        _ => Theme.BaseButton
     };
 
 }

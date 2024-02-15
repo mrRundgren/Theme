@@ -1,7 +1,8 @@
-﻿namespace UiComponents.Core;
+﻿namespace UiComponents;
 
 public enum ButtonType
 {
+    Base,
     Primary,
     Secondary,
     Danger,
