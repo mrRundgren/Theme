@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using UiComponents.Theming;
+using UiComponents;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-builder.Services.AddScoped<ThemeProvider>();
+builder.Services.AddUiComponents();
 
 await builder.Build().RunAsync();

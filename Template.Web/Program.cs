@@ -1,5 +1,5 @@
 using Template.Web.Components;
-using UiComponents.Theming;
+using UiComponents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-builder.Services.AddScoped<ThemeProvider>();
+builder.Services.AddUiComponents();
 
 var app = builder.Build();
 
