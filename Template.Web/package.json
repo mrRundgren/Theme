@@ -2,7 +2,6 @@
   "name": "template.web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "css:watch": "npx tailwindcss -i ./Styles/source.css -o ./wwwroot/css/app.css --watch"
   },
@@ -11,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1"
   }
 }

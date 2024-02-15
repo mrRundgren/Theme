@@ -18,6 +18,11 @@
     <ItemGroup>
         <UpToDateCheckInput Remove="Core\Button.razor"/>
         <UpToDateCheckInput Remove="Core\Ripple.razor"/>
+        <UpToDateCheckInput Remove="Theming\Buttons\DangerButton.razor" />
+        <UpToDateCheckInput Remove="Theming\Buttons\IconButton.razor" />
+        <UpToDateCheckInput Remove="Theming\Buttons\InvisibleButton.razor" />
+        <UpToDateCheckInput Remove="Theming\Buttons\PrimaryButton.razor" />
+        <UpToDateCheckInput Remove="Theming\Buttons\SecondaryButton.razor" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,0 +1,12 @@
+@namespace UiComponents.Theming
+@using System.Reflection
+@inherits UiComponentBase
+
+@code {
+    [Parameter] public string Name { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        typeof(ThemeProvider).GetProperty(Name)?.SetValue(ThemeProvider, ClassAttribute);
+    }
+}

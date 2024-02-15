@@ -3,6 +3,28 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace UiComponents.Theming;
 
+public abstract class Theming
+{
+    public static class Colors
+    {
+        public const string Background = nameof(ThemeProvider.BackgroundColor);
+        public const string Text = nameof(ThemeProvider.TextColor);
+    }
+    public static class Buttons
+    {
+        public const string Primary = nameof(ThemeProvider.PrimaryButton);
+        public const string Secondary = nameof(ThemeProvider.SecondaryButton);
+        public const string Danger = nameof(ThemeProvider.DangerButton);
+        public const string Invisible = nameof(ThemeProvider.InvisibleButton);
+        public const string Icon = nameof(ThemeProvider.IconButton);
+    }
+
+    public static class Effects
+    {
+        public const string Ripple = nameof(ThemeProvider.RippleEffect);   
+    }
+}
+
 public class ThemeProvider : IDisposable
 {
     private readonly PersistentComponentState _state;
@@ -13,6 +35,8 @@ public class ThemeProvider : IDisposable
         _state = state;
         _subscription = _state.RegisterOnPersisting(OnPersisting, new InteractiveAutoRenderMode());
 
+        BackgroundColor = FindInState(nameof(BackgroundColor), BackgroundColor);
+        TextColor = FindInState(nameof(TextColor), TextColor);
         PrimaryButton = FindInState(nameof(PrimaryButton), PrimaryButton);
         SecondaryButton = FindInState(nameof(SecondaryButton), SecondaryButton);
         DangerButton = FindInState(nameof(DangerButton), DangerButton);
@@ -21,6 +45,10 @@ public class ThemeProvider : IDisposable
         RippleEffect = FindInState(nameof(RippleEffect), RippleEffect);
     }
 
+    public string? BackgroundColor { get; set; }
+    
+    public string? TextColor { get; set; }
+    
     public string? PrimaryButton { get; set; }
 
     public string? SecondaryButton { get; set; }

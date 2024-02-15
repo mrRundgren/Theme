@@ -3,6 +3,6 @@ using UiComponents;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-builder.Services.AddUiComponents();
+builder.Services.AddWasmUiComponents();
 
 await builder.Build().RunAsync();

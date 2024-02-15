@@ -5,9 +5,13 @@ namespace UiComponents;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddUiComponents(this IServiceCollection services)
+    public static IServiceCollection AddServerUiComponents(this IServiceCollection services)
     {
         return services.AddScoped<ThemeProvider>();
-        ;
+    }
+    
+    public static IServiceCollection AddWasmUiComponents(this IServiceCollection services)
+    {
+        return services.AddSingleton<ThemeProvider>();
     }
 }

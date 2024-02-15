@@ -1,19 +1,11 @@
 ﻿@inherits LayoutComponentBase
+@inject ThemeProvider Theme
 
-<div class="page">
-    <div class="sidebar">
+<div class="w-full min-h-dvh @(Theme.BackgroundColor) @(Theme.TextColor)">
+    <header>
         <NavMenu/>
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </header>
+    <main>@Body</main>
 </div>
 
 <div id="blazor-error-ui">
@@ -22,15 +14,3 @@
     <a class="dismiss">🗙</a>
 </div>
 
-<Theme>
-    <Buttons>
-        <PrimaryButton class="ripple-dark *:pointer-events-none bg-neutral-900 text-neutral-100 hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 rounded px-6 h-12 flex items-center justify-center gap-6 transition-colors select-none disabled:opacity-50 disabled:pointer-events-none"/>
-        <SecondaryButton class="ripple-light *:pointer-events-none bg-transparent text-neutral-900 border-2 border-neutral-900 hover:bg-black/10 dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-colors select-none disabled:opacity-50 disabled:pointer-events-none"/>
-        <DangerButton class="ripple-dark *:pointer-events-none bg-red-500 text-neutral-100 hover:bg-red-600 rounded px-6 h-12 flex items-center justify-center gap-6 transition-colors select-none disabled:opacity-50 disabled:pointer-events-none"/>
-        <InvisibleButton class="ripple-light *:pointer-events-none bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded px-6 h-12 flex items-center justify-center gap-6 transition-colors select-none disabled:opacity-50 disabled:pointer-events-none"/>
-        <IconButton class="ripple-light *:pointer-events-none bg-transparent text-neutral-900 hover:bg-black/10 dark:text-neutral-100 dark:hover:bg-white/10 rounded-full h-12 w-12 flex items-center justify-center gap-6 transition-colors select-none disabled:opacity-50 disabled:pointer-events-none"/>
-    </Buttons>
-    <Effects>
-        <RippleEffect class="ripple block absolute w-full aspect-square rounded-full z-10 origin-center"/>
-    </Effects>
-</Theme>
