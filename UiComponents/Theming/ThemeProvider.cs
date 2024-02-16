@@ -113,6 +113,7 @@ public class ThemeProvider : IDisposable
         _state.PersistAsJson(nameof(InvisibleButton), InvisibleButton);
         _state.PersistAsJson(nameof(IconButton), IconButton);
         _state.PersistAsJson(nameof(RippleEffect), RippleEffect);
+        
         return Task.CompletedTask;
     }
 

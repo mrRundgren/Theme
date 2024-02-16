@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using UiComponents.Theming;
 
-namespace UiComponents;
+namespace UiComponents.Core;
 
 public class UiComponentBase : ComponentBase
 {
