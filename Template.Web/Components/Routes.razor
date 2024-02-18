@@ -8,7 +8,7 @@
     <Layout>
         <CssFor Name="@Theming.Layout.App" class="flex w-full min-h-screen bg-white dark:bg-black text-black dark:text-white"/>
         <CssFor Name="@Theming.Layout.Body" class="flex-1"/>
-        <CssFor Name="@Theming.Layout.Drawer" class="p-4 pr-2.5 scroll-gutter w-full max-w-xs h-dvh overflow-y-auto fixed top-0 z-10 transition-transform -translate-x-full drop-shadow-xl 2xl:block 2xl:drop-shadow-none 2xl:relative 2xl:translate-x-0 bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"/>
+        <CssFor Name="@Theming.Layout.Drawer" class="p-4 pr-3 xl:scroll-gutter w-full max-w-xs h-dvh overflow-y-auto fixed top-0 z-10 transition-transform data-[state=closed]:-translate-x-full data-[state=closed]:drop-shadow-none data-[state=open]:translate-x-0 data-[state=open]:drop-shadow-xl 2xl:block 2xl:sticky 2xl:drop-shadow-none 2xl:data-[state=closed]:translate-x-0 bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"/>
     </Layout>
     <Colors>
         <CssFor Name="@Theming.Colors.BgDefault" class="bg-white dark:bg-black"/>

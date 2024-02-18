@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-    ::-webkit-scrollbar {
-        @apply w-1.5
+    .scroll-gutter::-webkit-scrollbar {
+        @apply w-1 h-1
     }
 
-    ::-webkit-scrollbar-track {
+    .scroll-gutter::-webkit-scrollbar-track {
         @apply bg-black/10 dark:bg-white/10
     }
 
-    ::-webkit-scrollbar-thumb {
+    .scroll-gutter::-webkit-scrollbar-thumb {
         @apply bg-black/20 dark:bg-white/20 transition-colors rounded-full
     }
 
     .scroll-gutter {
-        scrollbar-gutter: stable;
+        scrollbar-gutter: auto;
     }
 }
 

@@ -18,9 +18,9 @@ public class DrawerInterop(IJSRuntime jsRuntime) : IAsyncDisposable
         }
     }
 
-    public async ValueTask OpenAsync()
+    public async ValueTask ToggleAsync()
     {
         var module = await _moduleTask.Value;
-        await module.InvokeVoidAsync("open");
+        await module.InvokeVoidAsync("toggleDrawer");
     }
 }

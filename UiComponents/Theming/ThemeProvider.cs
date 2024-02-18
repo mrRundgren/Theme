@@ -73,41 +73,23 @@ public class ThemeProvider : IDisposable
     }
 
     public string? BgColorDefault { get; init; }
-
     public string? FgColorDefault { get; init; }
-
     public string? BgColorEmphasis { get; init; }
-
     public string? FgColorEmphasis { get; init; }
-
     public string? BgColorSubtle { get; init; }
-
     public string? FgColorSubtle { get; init; }
-
     public string? BgColorInset { get; init; }
-
     public string? FgColorInset { get; init; }
-
     public string? BaseButton { get; init; }
-
     public string? PrimaryButton { get; init; }
-
     public string? SecondaryButton { get; init; }
-
     public string? DangerButton { get; init; }
-
     public string? InvisibleButton { get; init; }
-
     public string? IconButton { get; init; }
-
     public string? RippleEffect { get; init; }
-
     public string? FocusEffect { get; init; }
-
     public string? App { get; init; }
-
     public string? Drawer { get; init; }
-
     public string? Body { get; init; }
 
     public void Dispose()
