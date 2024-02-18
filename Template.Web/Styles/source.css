@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    ::-webkit-scrollbar {
+        @apply w-1.5
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-black/10 dark:bg-white/10
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-black/20 dark:bg-white/20 transition-colors rounded-full
+    }
+
+    .scroll-gutter {
+        scrollbar-gutter: stable;
+    }
+}
+
 @layer components {
     .ripple {
         transform: translate(-50%, -50%) scale(0);

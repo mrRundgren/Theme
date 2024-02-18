@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using UiComponents.Theming;
 
-namespace UiComponents.Core;
+namespace UiComponents;
 
-public class UiComponentBase : ComponentBase
+public abstract class UiComponentBase : ComponentBase
 {
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> UnmatchedAttributes { get; set; } = new();

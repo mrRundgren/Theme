@@ -1,4 +1,4 @@
-﻿@inherits UiComponents.Core.UiComponentBase
+﻿@inherits UiComponents.UiComponentBase
 
 @if (Colors is not null)
 {
@@ -15,6 +15,11 @@
     @Effects
 }
 
+@if (Layout is not null)
+{
+    @Layout
+}
+
 @code {
 
     [Parameter] public RenderFragment? Colors { get; set; }
@@ -22,4 +27,6 @@
     [Parameter] public RenderFragment? Buttons { get; set; }
 
     [Parameter] public RenderFragment? Effects { get; set; }
+
+    [Parameter] public RenderFragment? Layout { get; set; }
 }

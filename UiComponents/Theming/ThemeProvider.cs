@@ -5,6 +5,13 @@ namespace UiComponents.Theming;
 
 public abstract class Theming
 {
+    public static class Layout
+    {
+        public const string App = nameof(ThemeProvider.App);
+        public const string Drawer = nameof(ThemeProvider.Drawer);
+        public const string Body = nameof(ThemeProvider.Body);
+    }
+
     public static class Colors
     {
         public const string BgDefault = nameof(ThemeProvider.BgColorDefault);
@@ -30,6 +37,7 @@ public abstract class Theming
     public static class Effects
     {
         public const string Ripple = nameof(ThemeProvider.RippleEffect);
+        public const string Focus = nameof(ThemeProvider.FocusEffect);
     }
 }
 
@@ -58,6 +66,10 @@ public class ThemeProvider : IDisposable
         InvisibleButton = FindInState(nameof(InvisibleButton), InvisibleButton);
         IconButton = FindInState(nameof(IconButton), IconButton);
         RippleEffect = FindInState(nameof(RippleEffect), RippleEffect);
+        FocusEffect = FindInState(nameof(FocusEffect), FocusEffect);
+        App = FindInState(nameof(App), App);
+        Drawer = FindInState(nameof(Drawer), Drawer);
+        Body = FindInState(nameof(Body), Body);
     }
 
     public string? BgColorDefault { get; init; }
@@ -90,6 +102,14 @@ public class ThemeProvider : IDisposable
 
     public string? RippleEffect { get; init; }
 
+    public string? FocusEffect { get; init; }
+
+    public string? App { get; init; }
+
+    public string? Drawer { get; init; }
+
+    public string? Body { get; init; }
+
     public void Dispose()
     {
         _subscription.Dispose();
@@ -113,7 +133,11 @@ public class ThemeProvider : IDisposable
         _state.PersistAsJson(nameof(InvisibleButton), InvisibleButton);
         _state.PersistAsJson(nameof(IconButton), IconButton);
         _state.PersistAsJson(nameof(RippleEffect), RippleEffect);
-        
+        _state.PersistAsJson(nameof(FocusEffect), FocusEffect);
+        _state.PersistAsJson(nameof(App), App);
+        _state.PersistAsJson(nameof(Drawer), Drawer);
+        _state.PersistAsJson(nameof(Body), Body);
+
         return Task.CompletedTask;
     }
 

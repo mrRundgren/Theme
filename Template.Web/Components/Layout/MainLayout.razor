@@ -1,16 +1,12 @@
 ﻿@inherits LayoutComponentBase
 @inject ThemeProvider Theme
 
-<div class="w-full min-h-dvh @(Theme.BgColorDefault) @(Theme.FgColorDefault)">
-    <header>
-        <NavMenu/>
-    </header>
-    <main>@Body</main>
-</div>
+<Layout>
+    <Drawer>
+        <Logo/>
+        <MainMenu/>
+    </Drawer>
+    <Body>@Body</Body>
+</Layout>
 
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
-
+<BlazorErrorUi/>

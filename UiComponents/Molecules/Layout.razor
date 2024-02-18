@@ -1,0 +1,16 @@
+﻿@inherits UiComponentBase
+
+<app class="@(Theme.App) @(ClassAttribute)">
+    @if (Drawer is not null)
+    {
+        <aside id="uiComponents__Drawer" class="@(Theme.Drawer)">
+            @Drawer
+        </aside>
+    }
+    <main class="@(Theme.Body)">@Body</main>
+</app>
+
+@code {
+    [Parameter] public RenderFragment? Drawer { get; set; }
+    [Parameter] public RenderFragment? Body { get; set; }
+}

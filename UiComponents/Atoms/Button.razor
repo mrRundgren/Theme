@@ -1,0 +1,63 @@
+﻿@inherits UiComponentBase
+
+@if (!Attributes.ContainsKey("href"))
+{
+    <button
+        @attributes="Attributes"
+        @onmouseup="@(e => Args = e)"
+        @onmousedown="@(() => Args = null)"
+        @onblur="@(() => Args = null)"
+        class="@(CssClass)"
+        role="button">
+        @ChildContent
+        @if (RippleEffect)
+        {
+            <Ripple @bind-Args="Args"/>
+        }
+    </button>
+}
+else
+{
+    <NavLink
+        @attributes="Attributes"
+        @onmouseup="@(e => Args = e)"
+        @onmousedown="@(() => Args = null)"
+        @onblur="@(() => Args = null)"
+        class="@(CssClass)"
+        role="link"
+        Match="@(Match ?? NavLinkMatch.Prefix)">
+        @ChildContent
+        @if (RippleEffect)
+        {
+            <Ripple @bind-Args="Args"/>
+        }
+    </NavLink>
+}
+
+@code {
+
+    [Parameter] public Variant Variant { get; set; } = Variant.Base;
+    [Parameter] public bool RippleEffect { get; set; } = true;
+    [Parameter] public bool FocusEffect { get; set; } = true;
+    [Parameter] public NavLinkMatch? Match { get; set; }
+
+    private MouseEventArgs? Args { get; set; }
+
+    private string? VariantCssClass => Variant switch
+    {
+        Variant.Primary => Theme.PrimaryButton,
+        Variant.Secondary => Theme.SecondaryButton,
+        Variant.Danger => Theme.DangerButton,
+        Variant.Invisible => Theme.InvisibleButton,
+        Variant.Icon => Theme.IconButton,
+        _ => Theme.BaseButton
+    };
+
+    private string CssClass => string.Join(' ',
+        Theme.BaseButton,
+        FocusEffect ? Theme.FocusEffect : string.Empty,
+        VariantCssClass,
+        ClassAttribute
+    );
+
+}

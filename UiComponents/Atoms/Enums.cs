@@ -1,6 +1,6 @@
 ﻿namespace UiComponents;
 
-public enum ButtonType
+public enum Variant
 {
     Base,
     Primary,
@@ -8,4 +8,12 @@ public enum ButtonType
     Danger,
     Invisible,
     Icon
+}
+
+public enum Color
+{
+    Default,
+    Emphasis,
+    Subtle,
+    Inset
 }
