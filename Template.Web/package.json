@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "css:watch": "npx tailwindcss -i ./Styles/source.css -o ./wwwroot/css/app.css --watch"
+    "tailwind:watch": "npx tailwindcss -i ./Styles/source.css -o ./wwwroot/css/app.css --watch"
   },
   "keywords": [],
   "author": "",

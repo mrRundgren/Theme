@@ -1,63 +1,44 @@
 ﻿@inherits UiComponentBase
 
-@if (!Attributes.ContainsKey("href"))
-{
-    <button
-        @attributes="Attributes"
-        @onmouseup="@(e => Args = e)"
-        @onmousedown="@(() => Args = null)"
-        @onblur="@(() => Args = null)"
-        class="@(CssClass)"
-        role="button">
-        @ChildContent
-        @if (RippleEffect)
-        {
-            <Ripple @bind-Args="Args"/>
-        }
-    </button>
-}
-else
-{
-    <NavLink
-        @attributes="Attributes"
-        @onmouseup="@(e => Args = e)"
-        @onmousedown="@(() => Args = null)"
-        @onblur="@(() => Args = null)"
-        class="@(CssClass)"
-        role="link"
-        Match="@(Match ?? NavLinkMatch.Prefix)">
-        @ChildContent
-        @if (RippleEffect)
-        {
-            <Ripple @bind-Args="Args"/>
-        }
-    </NavLink>
-}
+<button
+    @attributes="Attributes"
+    @onmouseup="OnMouseUp"
+    @onmousedown="OnMouseDown"
+    @onblur="OnBlur"
+    class="@(CssClass)"
+    role="button">
+    @ChildContent
+    @if (RippleEffect)
+    {
+        <Ripple @bind-Args="Args"/>
+    }
+</button>
 
 @code {
 
-    [Parameter] public Variant Variant { get; set; } = Variant.Base;
+    [Parameter] public string Style { get; set; } = Theming.ButtonStyles.Base;
     [Parameter] public bool RippleEffect { get; set; } = true;
     [Parameter] public bool FocusEffect { get; set; } = true;
-    [Parameter] public NavLinkMatch? Match { get; set; }
+    [Parameter] public MouseEventArgs? Args { get; set; }
 
-    private MouseEventArgs? Args { get; set; }
-
-    private string? VariantCssClass => Variant switch
+    private string? VariantCssClass => Style switch
     {
-        Variant.Primary => Theme.PrimaryButton,
-        Variant.Secondary => Theme.SecondaryButton,
-        Variant.Danger => Theme.DangerButton,
-        Variant.Invisible => Theme.InvisibleButton,
-        Variant.Icon => Theme.IconButton,
+        Theming.ButtonStyles.Primary => Theme.PrimaryButton,
+        Theming.ButtonStyles.Secondary => Theme.SecondaryButton,
+        Theming.ButtonStyles.Danger => Theme.DangerButton,
+        Theming.ButtonStyles.Invisible => Theme.InvisibleButton,
+        Theming.ButtonStyles.Icon => Theme.IconButton,
         _ => Theme.BaseButton
     };
 
-    private string CssClass => string.Join(' ',
+    protected string CssClass => string.Join(' ',
         Theme.BaseButton,
         FocusEffect ? Theme.FocusEffect : string.Empty,
         VariantCssClass,
         ClassAttribute
     );
 
+    private void OnMouseUp(MouseEventArgs e) => Args = e;
+    private void OnMouseDown() => Args = null;
+    private void OnBlur() => Args = null;
 }

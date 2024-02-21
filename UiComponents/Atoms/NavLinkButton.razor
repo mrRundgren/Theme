@@ -1,0 +1,22 @@
+﻿@inherits Button
+
+<NavLink
+    @attributes="Attributes"
+    @onmouseup="@(e => Args = e)"
+    @onmousedown="@(() => Args = null)"
+    @onblur="@(() => Args = null)"
+    class="@(CssClass)"
+    role="link"
+    Match="@(Match ?? NavLinkMatch.Prefix)">
+    @ChildContent
+    @if (RippleEffect)
+    {
+        <Ripple @bind-Args="Args"/>
+    }
+</NavLink>
+
+@code {
+
+    [Parameter] public NavLinkMatch? Match { get; set; }
+
+}

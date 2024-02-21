@@ -1,0 +1,35 @@
+@inherits UiIconBase
+
+@if (_razorComponentType is not null)
+{
+    <DynamicComponent Type="_razorComponentType" Parameters="UnmatchedAttributes"/>
+}
+
+@code {
+
+    [Parameter] public string Name { get; set; } = Theming.Icons.Sparkles;
+
+    [Parameter] public string Style { get; set; } = Theming.IconStyles.Outline;
+
+    private string? _iconVariant;
+    private Type? _razorComponentType;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        var name = Name.Replace("-", "").Replace(" ", "");
+        if (!name.ToLower().EndsWith("icon"))
+        {
+            name = $"{name}Icon";
+        }
+
+        if (_razorComponentType is not null && string.Equals(_razorComponentType.Name, name, StringComparison.CurrentCultureIgnoreCase) && _iconVariant == Style) return;
+        _razorComponentType = System.Type.GetType($"UiComponents.Atoms.Icons.{Style}.{name}", false, true)!;
+        _iconVariant = Style;
+    }
+
+    private string CssClass => string.Join(' ',
+        ClassAttribute
+    );
+
+}

@@ -1,0 +1,15 @@
+﻿@inherits Button
+
+<a
+    @attributes="Attributes"
+    @onmouseup="@(e => Args = e)"
+    @onmousedown="@(() => Args = null)"
+    @onblur="@(() => Args = null)"
+    class="@(CssClass)"
+    role="link">
+    @ChildContent
+    @if (RippleEffect)
+    {
+        <Ripple @bind-Args="Args"/>
+    }
+</a>
