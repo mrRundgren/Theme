@@ -1,0 +1,15 @@
+﻿<a @attributes="Attributes" style="@(Style)" class="@(ClassAttribute) @(Args is not null ? "ripple--animate" : "")"
+   @onmousedown="OnMouseDown">
+</a>
+
+@code {
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> UnmatchedAttributes { get; set; } = new();
+
+    private Dictionary<string, object> Attributes => UnmatchedAttributes.Where(a => a.Key != "class").ToDictionary();
+    private string? ClassAttribute => UnmatchedAttributes.FirstOrDefault(a => a.Key == "class").Value?.ToString();
+    private MouseEventArgs? Args { get; set; }
+    private string Style => Args is not null ? $"top: {Args.OffsetY}px; left: {Args.OffsetX}px;" : "top: 50%; left: 50%;";
+    private void OnMouseDown(MouseEventArgs e) => Args = e;
+}

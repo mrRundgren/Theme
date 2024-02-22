@@ -2,43 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    .scroll-gutter::-webkit-scrollbar {
-        @apply w-1 h-1
-    }
+/*@layer base {*/
+/*    .scroll-gutter::-webkit-scrollbar {*/
+/*        @apply w-1 h-1*/
+/*    }*/
 
-    .scroll-gutter::-webkit-scrollbar-track {
-        @apply bg-black/10 dark:bg-white/10
-    }
+/*    .scroll-gutter::-webkit-scrollbar-track {*/
+/*        @apply bg-black/10 dark:bg-white/10*/
+/*    }*/
 
-    .scroll-gutter::-webkit-scrollbar-thumb {
-        @apply bg-black/20 dark:bg-white/20 transition-colors rounded-full
-    }
+/*    .scroll-gutter::-webkit-scrollbar-thumb {*/
+/*        @apply bg-black/20 dark:bg-white/20 transition-colors rounded-full*/
+/*    }*/
 
-    .scroll-gutter {
-        scrollbar-gutter: auto;
-    }
-}
+/*    .scroll-gutter {*/
+/*        scrollbar-gutter: auto;*/
+/*    }*/
+/*}*/
 
 @layer components {
-    .ripple {
-        transform: translate(-50%, -50%) scale(0);
-        animation: ripple 0.5s linear;
-    }
-
     .ripple-dark {
         @apply [&>.ripple]:bg-black/15;
     }
 
     .ripple-light {
         @apply [&>.ripple]:bg-white/30;
-    }
-
-    @keyframes ripple {
-        to {
-            transform: translate(-50%, -50%) scale(4);
-            opacity: 0;
-        }
     }
 
     .blazor-error-boundary {

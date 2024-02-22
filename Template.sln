@@ -8,6 +8,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Web.Client", "Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiComponents", "UiComponents\UiComponents.csproj", "{76F4E8FE-EB1D-49A6-9796-AEC3EB4634A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico", "Pico\Pico.csproj", "{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,18 @@ Global
 		{76F4E8FE-EB1D-49A6-9796-AEC3EB4634A9}.Release|x64.Build.0 = Release|Any CPU
 		{76F4E8FE-EB1D-49A6-9796-AEC3EB4634A9}.Release|x86.ActiveCfg = Release|Any CPU
 		{76F4E8FE-EB1D-49A6-9796-AEC3EB4634A9}.Release|x86.Build.0 = Release|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Debug|x64.Build.0 = Debug|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Debug|x86.Build.0 = Debug|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Release|x64.ActiveCfg = Release|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Release|x64.Build.0 = Release|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Release|x86.ActiveCfg = Release|Any CPU
+		{E9BF5C35-8E0B-4809-ABAC-94F85E41AF64}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

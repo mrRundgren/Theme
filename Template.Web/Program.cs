@@ -1,5 +1,4 @@
 using Template.Web.Components;
-using UiComponents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,8 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
-
-builder.Services.AddServerUiComponents();
 
 var app = builder.Build();
 
