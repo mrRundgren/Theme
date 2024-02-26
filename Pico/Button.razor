@@ -1,0 +1,46 @@
+﻿@CreateComponent()
+
+@code {
+    [Inject] public ThemeManager Theme { get; set; } = new();
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> UnmatchedAttributes { get; set; } = new();
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public string Tag { get; set; } = "button";
+    [Parameter] public string? Text { get; set; }
+    [Parameter] public Direction Direction { get; set; } = Direction.Ltr;
+    [Parameter] public bool Inactive { get; set; }
+    [Parameter] public EventCallback<bool> InactiveChanged { get; set; }
+
+    protected virtual string CssClass => "";
+    private Dictionary<string, object> Attributes => UnmatchedAttributes.Where(a => a.Key != "class").ToDictionary();
+    private string? ClassAttribute => UnmatchedAttributes.FirstOrDefault(a => a.Key == "class").Value?.ToString();
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        List<string?> classes = [CssClass, $"direction-{Direction.ToString().ToLowerInvariant()}", ClassAttribute];
+
+        builder.OpenElement(0, Tag);
+        builder.AddMultipleAttributes(1, Attributes);
+        builder.AddAttribute(2, "class", string.Join(" ", classes).Trim());
+        builder.AddAttribute(3, "pico", "");
+        builder.AddAttribute(4, "aria-disabled", (Inactive).ToString());
+
+        if (Text is not null)
+        {
+            builder.OpenElement(5, "div");
+            builder.AddAttribute(6, "class", "btn__text");
+            builder.AddContent(7, Text);
+            builder.CloseElement();
+        }
+
+        if (ChildContent is not null)
+        {
+            builder.AddContent(8, ChildContent);
+        }
+
+        builder.CloseElement();
+    };
+
+}

@@ -3,5 +3,7 @@
 public enum Direction
 {
     Ltr,
-    Rtl
+    Rtl,
+    Ttb,
+    Btt
 }

@@ -1,8 +1,16 @@
-﻿<a @attributes="Attributes" style="@(Style)" class="@(ClassAttribute) @(Args is not null ? "ripple--animate" : "")"
-   @onmousedown="OnMouseDown">
-</a>
+﻿<div
+    @onmousedown="@(() => Args = null)"
+    @onmouseup="@((e) => Args = e)"
+    @onblur="@(() => Args = null)"
+    class="@CssClass">
+    @if (Args is not null)
+    {
+        <ripple style="@($"top: {Args.OffsetY}px; left: {Args.OffsetX}px;")"/>
+    }
+</div>
 
 @code {
+    [Inject] public ThemeManager Theme { get; set; } = new();
 
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> UnmatchedAttributes { get; set; } = new();
@@ -12,4 +20,6 @@
     private MouseEventArgs? Args { get; set; }
     private string Style => Args is not null ? $"top: {Args.OffsetY}px; left: {Args.OffsetX}px;" : "top: 50%; left: 50%;";
     private void OnMouseDown(MouseEventArgs e) => Args = e;
+
+    private string CssClass => string.Join(" ", [Theme.RippleCss, ClassAttribute]).Trim();
 }

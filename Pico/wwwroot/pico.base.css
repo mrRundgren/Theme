@@ -1,0 +1,126 @@
+﻿:root {
+    --border-radius: 0.25rem;
+    --line-height: 1.5rem;
+    --color-black: hsl(0, 0%, 0%, 100%);
+    --color-black-hover: hsl(0, 0%, 20%, 100%);
+    --color-white: hsl(0, 0%, 100%, 100%);
+    --color-white-hover: hsl(0, 0%, 90%, 100%);
+    --color-danger: hsl(0, 72%, 40%, 100%);
+    --color-danger-hover: hsl(0, 72%, 50%, 100%);
+    --color-transparent: transparent;
+    --color-focus: hsl(85, 85%, 35%, 100%);
+    --color-focus-hover: hsl(85, 85%, 30%, 100%);
+    --color-ripple: hsl(85, 85%, 35%, 50%);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-default: hsl(0, 0%, 100%, 100%);
+        --color-default-hover: hsl(0, 0%, 90%, 100%);
+        --color-emphasis: hsl(0, 0%, 0%, 100%);
+        --color-emphasis-hover: hsl(0, 0%, 20%, 100%);
+        --color-subtle: hsl(0, 0%, 95%, 100%);
+        --color-subtle-hover: hsl(0, 0%, 90%, 100%);
+        --color-inset: hsl(0, 0%, 90%, 100%);
+        --color-inset-hover: hsl(0, 0%, 85%, 100%);
+        --color-transparent-hover: hsl(0, 0%, 0%, 5%);
+    }
+
+    .pico-invert {
+        --color-default: hsl(0, 0%, 0%, 100%);
+        --color-default-hover: hsl(0, 0%, 20%, 100%);
+        --color-emphasis: hsl(0, 0%, 100%, 100%);
+        --color-emphasis-hover: hsl(0, 0%, 90%, 100%);
+        --color-subtle: hsl(0, 0%, 5%, 100%);
+        --color-subtle-hover: hsl(0, 0%, 10%, 100%);
+        --color-inset: hsl(0, 0%, 15%, 100%);
+        --color-inset-hover: hsl(0, 0%, 20%, 100%);
+        --color-transparent-hover: hsl(0, 0%, 100%, 15%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-default: hsl(0, 0%, 0%, 100%);
+        --color-default-hover: hsl(0, 0%, 20%, 100%);
+        --color-emphasis: hsl(0, 0%, 100%, 100%);
+        --color-emphasis-hover: hsl(0, 0%, 90%, 100%);
+        --color-subtle: hsl(0, 0%, 5%, 100%);
+        --color-subtle-hover: hsl(0, 0%, 10%, 100%);
+        --color-inset: hsl(0, 0%, 15%, 100%);
+        --color-inset-hover: hsl(0, 0%, 20%, 100%);
+        --color-transparent-hover: hsl(0, 0%, 100%, 15%);
+    }
+
+    .pico-invert {
+        --color-default: hsl(0, 0%, 100%, 100%);
+        --color-default-hover: hsl(0, 0%, 90%, 100%);
+        --color-emphasis: hsl(0, 0%, 0%, 100%);
+        --color-emphasis-hover: hsl(0, 0%, 20%, 100%);
+        --color-subtle: hsl(0, 0%, 95%, 100%);
+        --color-subtle-hover: hsl(0, 0%, 90%, 100%);
+        --color-inset: hsl(0, 0%, 90%, 100%);
+        --color-inset-hover: hsl(0, 0%, 85%, 100%);
+        --color-transparent-hover: hsl(0, 0%, 0%, 5%);
+    }
+}
+
+.bg-default {
+    background-color: var(--color-default);
+    color: var(--color-emphasis);
+}
+
+.text-default {
+    color: var(--color-default);
+}
+
+.bg-emphasis {
+    background-color: var(--color-emphasis);
+    color: var(--color-default);
+}
+
+.text-emphasis {
+    color: var(--color-emphasis);
+}
+
+.bg-subtle {
+    background-color: var(--color-subtle);
+    color: var(--color-emphasis);
+}
+
+.text-subtle {
+    color: var(--color-subtle)
+}
+
+.bg-inset {
+    background-color: var(--color-inset);
+    color: var(--color-emphasis);
+}
+
+.text-inset {
+    color: var(--color-inset);
+}
+
+.bg-focus {
+    background-color: var(--color-focus);
+    color: var(--color-white);
+}
+
+.text-focus {
+    color: var(--color-focus);
+}
+
+.animate-page-in {
+    animation: pico-page-load 0.125s linear;
+}
+
+@keyframes pico-page-load {
+    from {
+        transform: translate(0, 2.5%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

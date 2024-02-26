@@ -1,0 +1,162 @@
+﻿@page "/components/buttons"
+@rendermode InteractiveWebAssembly
+
+<Page Title="Buttons.">
+    <Article>
+        <h1>Buttons</h1>
+        <p>Buttons are used to initiate actions on a page or form.</p>
+    </Article>
+    <article class="relative bg-subtle text-subtle max-w-screen-xl min-h-64 w-full rounded-3xl mx-auto px-4 py-16 grid place-items-center transition-colors @(_overview ? "pico-invert" : "")">
+        <IconButton @onclick="@(() => _overview = !_overview)" class="!absolute top-2 right-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4"/>
+                <path d="M12 2v2"/>
+                <path d="M12 20v2"/>
+                <path d="m4.9 4.9 1.4 1.4"/>b
+                <path d="m17.7 17.7 1.4 1.4"/>
+                <path d="M2 12h2"/>
+                <path d="M20 12h2"/>
+                <path d="m6.3 17.7-1.4 1.4"/>
+                <path d="m19.1 4.9-1.4 1.4"/>
+            </svg>
+            <Ripple/>
+        </IconButton>
+        <nav class="w-full flex flex-col sm:flex-row items-center justify-center px-8 gap-4 max-w-lg mx-auto *:!w-full">
+            <SecondaryButton Text="Secondary">
+                <Ripple/>
+            </SecondaryButton>
+            <PrimaryButton Text="Primary">
+                <Ripple/>
+            </PrimaryButton>
+            <DangerButton Text="Danger">
+                <Ripple/>
+            </DangerButton>
+            <FocusButton Text="Focus">
+                <Ripple/>
+            </FocusButton>
+            <PrimaryButton Text="Inactive" Inactive="true">
+                <Ripple/>
+            </PrimaryButton>
+            <InvisibleButton Text="Invisible">
+                <Ripple/>
+            </InvisibleButton>
+        </nav>
+    </article>
+    <Article>
+        <h2>Usage</h2>
+        <p>
+            Buttons allow users to initiate an action or command when clicked or tapped.
+            The button's label or text description indicates the purpose of the action to the user.
+            In Pico, buttons are a fundamental building block of the design system.
+            Most of the time, pico recommends to use button variants to indicate something
+            special about the button's hierarchy or functionality.
+        </p>
+    </Article>
+    <Article>
+        <h2>Variants</h2>
+        <p>
+            Buttons have different variants meant to indicate something
+            special about the button's hierarchy or functionality.
+        </p>
+    </Article>
+    <Figure>
+        <Content>
+            <PrimaryButton Text="Primary button">
+                <Ripple/>
+            </PrimaryButton>
+        </Content>
+        <Caption>
+            <h3>Primary</h3>
+            <p>
+                Primary buttons represent the highest priority action in a page.
+                There should only ever be one primary button (if any) in a button group,
+                and typically only one primary button should be present in page.
+            </p>
+        </Caption>
+    </Figure>
+    <Figure>
+        <Content>
+            <SecondaryButton Text="Secondary button">
+                <Ripple/>
+            </SecondaryButton>
+        </Content>
+        <Caption>
+            <h3>Secondary</h3>
+            <p>
+                Secondary buttons are the default button color scheme and are suitable for more interactions.
+                They can be paired with a primary button to perform a secondary action, or used on their own.
+            </p>
+        </Caption>
+    </Figure>
+    <Figure>
+        <Content>
+            <InvisibleButton Text="Invisible button">
+                <Ripple/>
+            </InvisibleButton>
+        </Content>
+        <Caption>
+            <h3>Invisible</h3>
+            <p>
+                Invisible buttons have a transparent background with translucent hover and active states,
+                making them useful for compound components like ActionList.
+            </p>
+        </Caption>
+    </Figure>
+    <Figure>
+        <Content>
+            <DangerButton Text="Danger button">
+                <Ripple/>
+            </DangerButton>
+        </Content>
+        <Caption>
+            <h3>Danger</h3>
+            <p>
+                Danger buttons should be used sparingly to warn of a destructive action,
+                typically resulting in the opening of a confirmation dialog.
+            </p>
+        </Caption>
+    </Figure>
+    <Figure>
+        <Content>
+            <SecondaryButton Text="Inactive button" Inactive="true"/>
+        </Content>
+        <Caption>
+            <h3>Inactive</h3>
+            <p>
+                An inactive button has styles that make the button appear "muted". The style is the same for all button variants.
+                An inactive button an accessible alternative to a disabled button. They're intended to be used for buttons that are non-functional, but cannot be removed from the page.
+            </p>
+        </Caption>
+    </Figure>
+    <Article>
+        <h2>States</h2>
+        <p>
+            Buttons have different states for hover, active, focus and loading, as well as ripple.
+        </p>
+    </Article>
+    <Figure>
+        <Content>
+            <SecondaryButton Text="Ripple effect">
+                <Ripple/>
+            </SecondaryButton>
+        </Content>
+        <Caption>
+            <h3>Ripple</h3>
+            <p>
+                The active state of a button can be further enhanced by applying the <a href="/effects/ripple">Ripple effect</a>.
+            </p>
+        </Caption>
+    </Figure>
+</Page>
+
+@code {
+
+    private bool Open { get; set; }
+    private bool _overview;
+
+    private void Toggle()
+    {
+        Open = !Open;
+    }
+
+}

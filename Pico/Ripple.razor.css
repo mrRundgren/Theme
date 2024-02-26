@@ -1,0 +1,35 @@
+.ripple {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: inherit;
+
+    & > ripple {
+        position: absolute;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0);
+        width: 110%;
+        aspect-ratio: 1 / 1;
+        border-radius: 9999px !important;
+        z-index: 10;
+        transform-origin: center;
+        animation-iteration-count: 1;
+        background-color: var(--color-ripple);
+        animation: pico-ripple 0.5s linear;
+    }
+}
+
+@keyframes pico-ripple {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,7 @@
+﻿<article class="prose prose-headings:font-light prose-neutral dark:prose-invert w-full p-4 max-w-none">
+    @ChildContent
+</article>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

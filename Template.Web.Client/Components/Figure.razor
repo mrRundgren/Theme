@@ -1,0 +1,31 @@
+﻿<figure class="min-h-64 w-full rounded-3xl mx-auto grid md:grid-cols-5 gap-4">
+    <article class="md:col-span-2 order-2 md:order-1 bg-subtle text-subtle relative min-h-64 w-full max-w-screen-lg rounded-3xl mx-auto px-4 py-16 grid place-items-center transition-colors @(_toggle ? "pico-invert" : "")">
+        <IconButton @onclick="@(() => _toggle = !_toggle)" class="!absolute top-2 right-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4"/>
+                <path d="M12 2v2"/>
+                <path d="M12 20v2"/>
+                <path d="m4.9 4.9 1.4 1.4"/>
+                <path d="m17.7 17.7 1.4 1.4"/>
+                <path d="M2 12h2"/>
+                <path d="M20 12h2"/>
+                <path d="m6.3 17.7-1.4 1.4"/>
+                <path d="m19.1 4.9-1.4 1.4"/>
+            </svg>
+            <Ripple/>
+        </IconButton>
+        <content class="w-full flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+            @Content
+        </content>
+    </article>
+    <figcaption class="md:col-span-3 order-1 md:order-2 text-subtle w-full max-w-screen-lg p-4 prose prose-headings:font-light prose-neutral dark:prose-invert">
+        @Caption
+    </figcaption>
+</figure>
+
+@code {
+    [Parameter] public RenderFragment? Content { get; set; }
+    [Parameter] public RenderFragment? Caption { get; set; }
+
+    private bool _toggle;
+}
