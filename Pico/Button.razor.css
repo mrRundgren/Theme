@@ -123,15 +123,6 @@
         }
     }
 
-    &.btn-focus {
-        background-color: var(--color-focus);
-        color: var(--color-white);
-
-        &:hover:not(:active) {
-            background-color: var(--color-focus-hover);
-        }
-    }
-
     &.btn-inactive,
     &:disabled {
         background-color: var(--color-inset);

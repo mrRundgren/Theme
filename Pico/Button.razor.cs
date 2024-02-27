@@ -15,11 +15,6 @@ public class DangerButton : Button
     protected override string CssClass => Inactive ? Theme.InactiveButtonCss : Theme.DangerButtonCss;
 }
 
-public class FocusButton : Button
-{
-    protected override string CssClass => Inactive ? Theme.InactiveButtonCss : Theme.FocusButtonCss;
-}
-
 public class InvisibleButton : Button
 {
     protected override string CssClass => Inactive ? Theme.InactiveButtonCss : Theme.InvisibleButtonCss;
